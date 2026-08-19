@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClientFlow - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="screen-wrapper">
+    <div class="screen-card">
+      <div class="home-nav">
+        <div class="logo">
+          <i class="fas fa-users"></i> ClientFlow
+        </div>
+        <div class="nav-links">
+          <span>Recursos</span>
+          <span>Sobre</span>
+          <a href="login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+      </div>
+
+      <div class="home-hero">
+        <h1>Gestão inteligente de <span>clientes</span></h1>
+        <p>Organize, acompanhe e impulse seus relacionamentos em um só lugar.</p>
+        <div class="btn-group">
+          <a href="login.html" class="btn-primary"><i class="fas fa-rocket"></i> Começar agora</a>
+          <a href="#features" class="btn-secondary"><i class="fas fa-info-circle"></i> Saiba mais</a>
+        </div>
+      </div>
+
+      <div class="home-metrics" id="features">
+        <div class="metric-item">
+          <i class="fas fa-chart-pie"></i>
+          <div>Dashboard completo com indicadores em tempo real</div>
+        </div>
+        <div class="metric-item">
+          <i class="fas fa-shield-alt"></i>
+          <div>Seus dados protegidos com autenticação segura</div>
+        </div>
+        <div class="metric-item">
+          <i class="fas fa-history"></i>
+          <div>Histórico completo de atividades de cada cliente</div>
+        </div>
+      </div>
+
+      <div class="footer-home">
+        <span>© 2026 ClientFlow - Todos os direitos reservados</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        window.location.href = 'dashboard.html';
+      }
+    });
+  </script>
+</body>
+</html>

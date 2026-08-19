@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClientFlow - Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="screen-wrapper">
+    <div class="screen-card">
+      <div class="login-header">
+        <div class="logo">
+          <i class="fas fa-users"></i> ClientFlow
+        </div>
+        <div class="login-nav">
+          <a href="index.html" style="text-decoration:none; color:inherit;">Home</a>
+          <a href="login.html" style="text-decoration:none; color:#0b2b44; font-weight:600;">Login</a>
+        </div>
+      </div>
+
+      <div class="login-container-auth">
+        <div class="auth-box">
+          <div class="auth-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          
+          <div class="welcome-msg">Bem-vindo de volta!</div>
+          <div class="welcome-sub">Faça login para acessar seu dashboard.</div>
+
+          <form id="login-form" class="login-form">
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Email</label>
+              <input type="email" id="email" name="email" required placeholder="seu@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="password"><i class="fas fa-lock"></i> Senha</label>
+              <input type="password" id="password" name="password" required placeholder="Sua senha">
+            </div>
+            
+            <div id="error-message" class="error-message" style="display: none;"></div>
+            
+            <button type="submit" class="btn-primary" id="btn-login" style="width:100%; justify-content:center; cursor:pointer;">
+              <i class="fas fa-sign-in-alt"></i> Entrar
+            </button>
+          </form>
+          
+          <p class="auth-link">
+            Não tem conta? <a href="#" id="link-cadastro">Cadastre-se</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-cadastro" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Criar Conta</h3>
+        <button class="fechar-modal" onclick="fecharModalCadastro()">&times;</button>
+      </div>
+      <form id="form-cadastro">
+        <div class="form-group">
+          <label for="cadastro-nome"><i class="fas fa-user"></i> Nome Completo</label>
+          <input type="text" id="cadastro-nome" required placeholder="Seu nome completo">
+        </div>
+        <div class="form-group">
+          <label for="cadastro-email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="cadastro-email" required placeholder="seu@email.com">
+        </div>
+        <div class="form-group">
+          <label for="cadastro-senha"><i class="fas fa-lock"></i> Senha</label>
+          <input type="password" id="cadastro-senha" required minlength="6" placeholder="Mínimo 6 caracteres">
+        </div>
+        <div id="cadastro-error" class="error-message" style="display: none;"></div>
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; cursor:pointer; margin-top:1rem;">
+          <i class="fas fa-user-plus"></i> Criar Conta
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
