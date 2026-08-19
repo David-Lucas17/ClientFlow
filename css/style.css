@@ -485,14 +485,21 @@ body {
   border-color: #1f4f8a;
 }
 
+.tabela-clientes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .tabela-clientes th {
   font-weight: 600;
   color: #5a718b;
   border-bottom: 2px solid #e9eff5;
+  white-space: nowrap;
 }
 
 .tabela-clientes td {
   border-bottom: 1px solid #edf2f8;
+  white-space: nowrap;
 }
 
 .status-badge-ativo {
@@ -672,6 +679,11 @@ body {
   font-size: 0.8rem;
 }
 
+.tabela-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 700px) {
   .home-nav { flex-direction: column; align-items: stretch; gap: 0.8rem; }
   .nav-links { justify-content: space-around; }
@@ -681,4 +693,10 @@ body {
   .login-header { flex-direction: column; gap: 1rem; }
   .login-nav { flex-wrap: wrap; justify-content: center; }
   .dual-panel { flex-direction: column; }
+
+  .clientes-header { flex-direction: column; align-items: stretch !important; gap: 1rem; }
+  .clientes-header .btn-primary { width: 100%; justify-content: center; }
+
+  .tabela-clientes { font-size: 0.85rem; min-width: 600px; }
+  .tabela-clientes th, .tabela-clientes td { padding: 0.5rem !important; }
 }
